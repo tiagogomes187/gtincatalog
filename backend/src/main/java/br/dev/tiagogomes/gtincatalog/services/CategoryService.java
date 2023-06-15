@@ -3,7 +3,8 @@ package br.dev.tiagogomes.gtincatalog.services;
 import br.dev.tiagogomes.gtincatalog.dto.CategoryDTO;
 import br.dev.tiagogomes.gtincatalog.entities.Category;
 import br.dev.tiagogomes.gtincatalog.repositories.CategoryRepository;
-import br.dev.tiagogomes.gtincatalog.services.exceptions.EntityNotFoundException;
+import br.dev.tiagogomes.gtincatalog.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +29,7 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public CategoryDTO findById(UUID id) {
         Optional<Category> obj = categoryRepository.findById(id);
-        Category entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found"));
+        Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
         return new CategoryDTO(entity);
     }
 
@@ -38,5 +39,17 @@ public class CategoryService {
         entity.setName(dto.getName());
         entity = categoryRepository.save(entity);
         return new CategoryDTO(entity);
+    }
+
+    @Transactional
+    public CategoryDTO update(UUID id, CategoryDTO dto) {
+        try {
+            Category entity = categoryRepository.getReferenceById(id);
+            entity.setName(dto.getName());
+            entity = categoryRepository.save(entity);
+            return new CategoryDTO(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException("Id [ " + id + " ] not found");
+        }
     }
 }

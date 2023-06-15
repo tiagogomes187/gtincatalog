@@ -1,6 +1,6 @@
 package br.dev.tiagogomes.gtincatalog.resources.exceptions;
 
-import br.dev.tiagogomes.gtincatalog.services.exceptions.EntityNotFoundException;
+import br.dev.tiagogomes.gtincatalog.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +12,8 @@ import java.time.Instant;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<StardardError> entityNotFound(EntityNotFoundException e, HttpServletRequest request) {
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<StardardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
         StardardError err = new StardardError();
         err.setTimestamp(Instant.now());
         err.setStatus(HttpStatus.NOT_FOUND.value());
