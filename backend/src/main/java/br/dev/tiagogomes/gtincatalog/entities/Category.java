@@ -1,12 +1,20 @@
 package br.dev.tiagogomes.gtincatalog.entities;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "tb_category")
 public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @ColumnDefault("random_uuid()")
     private UUID id;
     private String name;
 
