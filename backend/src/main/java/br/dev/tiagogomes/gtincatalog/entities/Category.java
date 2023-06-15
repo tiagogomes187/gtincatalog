@@ -1,6 +1,7 @@
 package br.dev.tiagogomes.gtincatalog.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     @ColumnDefault("random_uuid()")
     private UUID id;
+    @NotBlank
     private String name;
 
     public Category() {
