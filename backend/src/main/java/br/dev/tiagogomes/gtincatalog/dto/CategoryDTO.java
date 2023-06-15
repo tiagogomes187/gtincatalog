@@ -2,10 +2,12 @@ package br.dev.tiagogomes.gtincatalog.dto;
 
 import br.dev.tiagogomes.gtincatalog.entities.Category;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
 
 public class CategoryDTO implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private UUID id;
