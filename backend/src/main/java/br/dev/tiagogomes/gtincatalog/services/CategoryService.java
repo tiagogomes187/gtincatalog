@@ -3,10 +3,13 @@ package br.dev.tiagogomes.gtincatalog.services;
 import br.dev.tiagogomes.gtincatalog.dto.CategoryDTO;
 import br.dev.tiagogomes.gtincatalog.entities.Category;
 import br.dev.tiagogomes.gtincatalog.repositories.CategoryRepository;
+import br.dev.tiagogomes.gtincatalog.services.exceptions.DatabaseException;
 import br.dev.tiagogomes.gtincatalog.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -50,6 +53,19 @@ public class CategoryService {
             return new CategoryDTO(entity);
         } catch (EntityNotFoundException e) {
             throw new ResourceNotFoundException("Id [ " + id + " ] not found");
+        }
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void delete(UUID id) {
+        if (!categoryRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Id ["+id+"] not found");
+        }
+        try {
+            categoryRepository.deleteById(id);
+        }
+        catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Integrity violation");
         }
     }
 }
