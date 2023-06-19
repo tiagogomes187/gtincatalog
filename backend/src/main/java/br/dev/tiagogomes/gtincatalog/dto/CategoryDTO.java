@@ -10,13 +10,13 @@ public class CategoryDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private UUID id;
+    private Long id;
     private String name;
 
     public CategoryDTO() {
     }
 
-    public CategoryDTO(UUID id, String name) {
+    public CategoryDTO(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -26,11 +26,11 @@ public class CategoryDTO implements Serializable {
         this.name = entity.getName();
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

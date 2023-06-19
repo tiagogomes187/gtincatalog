@@ -2,12 +2,10 @@ package br.dev.tiagogomes.gtincatalog.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 @Table(name = "tb_category")
@@ -15,9 +13,8 @@ public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @ColumnDefault("random_uuid()")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotBlank
     private String name;
 
@@ -30,16 +27,16 @@ public class Category implements Serializable {
     public Category() {
     }
 
-    public Category(UUID id, String name) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,12 +57,12 @@ public class Category implements Serializable {
     }
 
     @PrePersist
-    public void prePersist(){
+    public void prePersist() {
         createdAt = Instant.now();
     }
 
     @PreUpdate
-    public void preUpdate(){
+    public void preUpdate() {
         updatedAt = Instant.now();
     }
 
