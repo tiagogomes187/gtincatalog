@@ -17,7 +17,7 @@ import java.net.URI;
 public class ProductResource {
 
     @Autowired
-    private ProductService ProductService;
+    private ProductService productService;
 
     @GetMapping
     public ResponseEntity<Page<ProductDTO>> findAll(
@@ -29,19 +29,19 @@ public class ProductResource {
 
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
 
-        Page<ProductDTO> list = ProductService.findAllPaged(pageRequest);
+        Page<ProductDTO> list = productService.findAllPaged(pageRequest);
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
-        ProductDTO dto = ProductService.findById(id);
+        ProductDTO dto = productService.findById(id);
         return ResponseEntity.ok().body(dto);
     }
 
     @PostMapping
     public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto) {
-        dto = ProductService.insert(dto);
+        dto = productService.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
@@ -49,13 +49,13 @@ public class ProductResource {
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto) {
-        dto = ProductService.update(id, dto);
+        dto = productService.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        ProductService.delete(id);
+        productService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
