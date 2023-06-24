@@ -1,4 +1,4 @@
-package br.dev.tiagogomes.gtincatalog;
+package br.dev.tiagogomes.gtincatalog.services;
 
 import br.dev.tiagogomes.gtincatalog.dto.ProductDTO;
 import br.dev.tiagogomes.gtincatalog.entities.Category;
