@@ -3,6 +3,7 @@ package br.dev.tiagogomes.gtincatalog.resources;
 import br.dev.tiagogomes.gtincatalog.dto.UserDTO;
 import br.dev.tiagogomes.gtincatalog.dto.UserInsertDTO;
 import br.dev.tiagogomes.gtincatalog.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class UserResource {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTO> insert(@RequestBody UserInsertDTO dto) {
+    public ResponseEntity<UserDTO> insert(@Valid @RequestBody UserInsertDTO dto) {
         UserDTO newDto = UserService.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(newDto.getId()).toUri();
@@ -40,7 +41,7 @@ public class UserResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO dto) {
+    public ResponseEntity<UserDTO> update(@PathVariable Long id, @Valid @RequestBody UserDTO dto) {
         dto = UserService.update(id, dto);
         return ResponseEntity.ok().body(dto);
     }

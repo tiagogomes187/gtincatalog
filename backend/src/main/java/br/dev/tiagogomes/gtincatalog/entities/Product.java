@@ -27,7 +27,6 @@ public class Product implements Serializable {
     @NotBlank
     private String brand; //MARCA
     @Column(unique = true)
-    @NotNull
     private Long gtin; //EAN13 OU EAN14
     @NotBlank
     private String ncm; //NCM

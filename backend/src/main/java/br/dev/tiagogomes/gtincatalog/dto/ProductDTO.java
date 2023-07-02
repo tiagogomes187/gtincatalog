@@ -2,6 +2,11 @@ package br.dev.tiagogomes.gtincatalog.dto;
 
 import br.dev.tiagogomes.gtincatalog.entities.Category;
 import br.dev.tiagogomes.gtincatalog.entities.Product;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,14 +20,20 @@ public class ProductDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    @Positive(message = "A referência deve ser um valor positivo")
     private Long reference; //REFERÊNICIA
+    @NotBlank(message = "Campo requerido")
     private String color; //COR
+    @Size(min = 5, max = 60, message = "Deve ter entre 5 e 60 caracteres")
+    @NotBlank(message = "Campo requerido")
     private String name; //NOME
     private String brand; //MARCA
     private Long gtin; //EAN13 OU EAN14
     private String ncm; //NCM
+    @PastOrPresent(message = "A data do produto não pode ser futura")
     private Instant date; //DATA DE LAÇAMENTO
     private String type; //TIPO DE GTIN
+    @Positive(message = "O preço deve ser um valor positivo")
     private Double price; //PREÇO
     private String imgUrl; //IMAGEM
     private String material; //MATERIAL EX: FULL PLASTIC
