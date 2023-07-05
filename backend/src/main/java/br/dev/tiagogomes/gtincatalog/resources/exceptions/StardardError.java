@@ -1,9 +1,11 @@
 package br.dev.tiagogomes.gtincatalog.resources.exceptions;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 
 public class StardardError implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private Instant timestamp;
