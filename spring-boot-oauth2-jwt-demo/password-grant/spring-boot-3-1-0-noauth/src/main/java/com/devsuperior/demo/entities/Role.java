@@ -15,7 +15,7 @@ public class Role implements GrantedAuthority {
     private Long id;
     private String authority;
 
-    public Role() {
+    public Role(String roleId, String authority) {
     }
 
     public Role(Long id, String authority) {
