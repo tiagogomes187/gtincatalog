@@ -6,6 +6,7 @@ import br.dev.tiagogomes.gtincatalog.dto.UserInsertDTO;
 import br.dev.tiagogomes.gtincatalog.dto.UserUpdateDTO;
 import br.dev.tiagogomes.gtincatalog.entities.Role;
 import br.dev.tiagogomes.gtincatalog.entities.User;
+import br.dev.tiagogomes.gtincatalog.projections.UserDetailsProjection;
 import br.dev.tiagogomes.gtincatalog.repositories.RoleRepository;
 import br.dev.tiagogomes.gtincatalog.repositories.UserRepository;
 import br.dev.tiagogomes.gtincatalog.services.exceptions.DatabaseException;
@@ -15,18 +16,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -92,5 +98,23 @@ public class UserService {
             entity.getRoles().add(role);
         }
 
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        List<UserDetailsProjection> result = userRepository.searchUserAndRolesByEmail(username);
+        if (result.size() == 0) {
+            throw new UsernameNotFoundException("Email not found");
+        }
+
+        User user = new User();
+        user.setEmail(result.get(0).getUsername());
+        user.setPassword(result.get(0).getPassword());
+        for (UserDetailsProjection projection : result) {
+            user.addRole(new Role(projection.getRoleId(), projection.getAuthority()));
+        }
+
+        return user;
     }
 }
