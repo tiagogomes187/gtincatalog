@@ -31,4 +31,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 			) AS tb_result
 			""")
 	Page<ProductProjetion> searchProducts(List<Long> categoryIds, String name, Pageable pageable);
+
+	@Query("SELECT obj FROM Product obj JOIN FETCH obj.categories WHERE obj.id IN :productsIds ORDER BY obj.name")
+	List<Product> searchProductsWithCategories(List<Long> productsIds);
 }

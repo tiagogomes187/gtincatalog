@@ -1,7 +1,6 @@
 package br.dev.tiagogomes.gtincatalog.resources;
 
 import br.dev.tiagogomes.gtincatalog.dto.ProductDTO;
-import br.dev.tiagogomes.gtincatalog.projections.ProductProjetion;
 import br.dev.tiagogomes.gtincatalog.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +21,10 @@ public class ProductResource {
 	private ProductService productService;
 
 	@GetMapping
-	public ResponseEntity<Page<ProductProjetion>> findAll(@RequestParam(value = "name", defaultValue = "") String name, @RequestParam(value = "categoryId", defaultValue = "0") String categoryId, Pageable pageable) {
-		Page<ProductProjetion> list = productService.findAllPaged(name, categoryId, pageable);
+	public ResponseEntity<Page<ProductDTO>> findAll(@RequestParam(value = "name", defaultValue = "") String name, @RequestParam(value = "categoryId", defaultValue = "0") String categoryId, Pageable pageable) {
+		Page<ProductDTO> list = productService.findAllPaged(name, categoryId, pageable);
 		return ResponseEntity.ok().body(list);
 	}
-
-//    @GetMapping
-//    public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable) {
-//        Page<ProductDTO> list = productService.findAllPaged(pageable);
-//        return ResponseEntity.ok().body(list);
-//    }
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
