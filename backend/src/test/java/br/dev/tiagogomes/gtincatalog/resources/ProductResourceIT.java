@@ -9,10 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -22,6 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @Transactional
 	public class ProductResourceIT {
+
+	@Autowired
+	private WebApplicationContext context;
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -38,11 +45,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 		existingId = 1L;
 		nonExistingId = 1000L;
 		countTotalProducts = 25L;
+		mockMvc = MockMvcBuilders.webAppContextSetup(context).apply(springSecurity()).build();
 	}
 
 	@Test
 	public void findAllShouldReturnSortedPageWhenSortByName() throws Exception {
-		ResultActions result = mockMvc.perform(get("/products?page=0&size=10&sort=name,asc")
+		ResultActions result = mockMvc.perform(get("/products?page=0&size=10&order=name,asc")
 				.accept(MediaType.APPLICATION_JSON));
 		result.andExpect(status().isOk());
 		result.andExpect(jsonPath("$.totalElements").value(countTotalProducts));
@@ -52,6 +60,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 		result.andExpect(jsonPath("$.content[2].name").value("Birkenmiss Fivelas"));
 	}
 
+	@WithMockUser(roles= {"ADMIN", "OPERATOR"})
 	@Test
 	public void updateShouldReturnProductDTOWhenIdExists() throws Exception {
 		ProductDTO productDTO = Factory.createProductDTO();
@@ -68,6 +77,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 		result.andExpect(jsonPath("$.name").value(expectedName));
 	}
 
+	@WithMockUser(roles= {"ADMIN", "OPERATOR"})
 	@Test
 	public void updateShouldReturnNotFoundWhenIdDoesNotExist() throws Exception {
 		ProductDTO productDTO = Factory.createProductDTO();
