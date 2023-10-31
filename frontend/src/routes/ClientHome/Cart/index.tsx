@@ -1,31 +1,33 @@
+import { useState } from "react";
 import "./styles.css";
+import * as cartService from "../../../services/cart-service";
+import { OrderDTO } from "../../../models/order";
 
-const cart = {
-  items: [
-    {
-      productId: 4,
-      quantity: 1,
-      name: "Sandália Infantil Flat Led",
-      color: "Preto",
-      reference: "20014",
-      price: 29.9,
-      imgUrl:
-        "https://cnp30blob.blob.core.windows.net/cnp3filestemp/a3f16ea11f623338b00ddaa19c8004b91b51291e98b5f98b4f21e7c438771c7c.png",
-    },
-    {
-      productId: 5,
-      quantity: 2,
-      name: "Chinelo Infantil Soft",
-      color: "Amarelo",
-      reference: "20029",
-      price: 24.9,
-      imgUrl:
-        "https://cnp30blob.blob.core.windows.net/cnp3filestemp/5356bffed1e8d7ffee2cde77092e2d963ad1c5772d8a32436f964309bd5f1f6e.png",
-    },
-  ],
-};
+// const item1: OrderItemDTO = new OrderItemDTO(
+//   4,
+//   1,
+//   "Sandália Infantil Flat Led",
+//   "20014",
+//   "Preto",
+//   29.9,
+//   "https://cnp30blob.blob.core.windows.net/cnp3filestemp/a3f16ea11f623338b00ddaa19c8004b91b51291e98b5f98b4f21e7c438771c7c.png"
+// );
+
+// const item2: OrderItemDTO = new OrderItemDTO(
+//   5,
+//   2,
+//   "Chinelo Infantil Soft",
+//   "20029",
+//   "Amarelo",
+//   24.9,
+//   "https://cnp30blob.blob.core.windows.net/cnp3filestemp/5356bffed1e8d7ffee2cde77092e2d963ad1c5772d8a32436f964309bd5f1f6e.png"
+// );
 
 export default function Cart() {
+
+  const [cart] = useState<OrderDTO>(cartService.getCart()); 
+  
+
   return (
     <main>
       <section id="cart-container-section" className="dsc-container">
@@ -38,7 +40,9 @@ export default function Cart() {
               <div className="dsc-cart-item-left">
                 <img src={item.imgUrl} alt={item.name} />
                 <div className="dsc-cart-item-description">
-                  <h3>{item.reference} - {item.name} - {item.color}</h3>
+                  <h3>
+                    {item.reference} - {item.name} - {item.color}
+                  </h3>
                   <div className="dsc-cart-item-quantity-container">
                     <div className="dsc-cart-item-quantity-btn">-</div>
                     <p>{item.quantity}</p>
