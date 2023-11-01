@@ -16,7 +16,7 @@ export class OrderItemDTO {
     public productId: number,
     public quantity: number,
     public name: string,
-    public reference: string,
+    public reference: number, //ESTAVA COM STRING, CASO DER ERRO LÁ NA FRENTE
     public color: string,
     public price: number,
     public imgUrl: string
