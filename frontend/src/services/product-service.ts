@@ -5,7 +5,7 @@ export function findPageRequest(
   page: number,
   name: string,
   size = 12,
-  order = "name",
+  order = "name"
 ) {
   const config: AxiosRequestConfig = {
     method: "GET",
@@ -15,7 +15,7 @@ export function findPageRequest(
       page,
       name,
       size,
-      order
+      order,
     },
   };
   return axios(config);

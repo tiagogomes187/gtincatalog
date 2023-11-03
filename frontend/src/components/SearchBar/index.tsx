@@ -14,7 +14,7 @@ export default function SearchBar({ onSearch }: Props) {
     setText(event.target.value);
   }
 
-  function handleResetClick(){
+  function handleResetClick() {
     setText("");
     onSearch(text);
   }
