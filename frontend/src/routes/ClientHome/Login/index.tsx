@@ -15,7 +15,7 @@ export default function Login() {
     password: "",
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   function hendleSubmit(event: any) {
     event.preventDefault();
     authService
@@ -30,7 +30,6 @@ export default function Login() {
       });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleInputChange(event: any) {
     const value = event.target.value;
     const name = event.target.name;
