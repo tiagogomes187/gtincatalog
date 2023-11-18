@@ -9,5 +9,6 @@ export type AccessTokenPayloadDTO = {
   exp: number;
   user_name: string;
   email: string;
+  firstName: string;
   authorities: RoleEnum[];
 };
