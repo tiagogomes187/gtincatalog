@@ -41,6 +41,7 @@ public class ResourceServerConfig {
 	}
 
 	@Bean
+	@Profile("prod")
 	@Order(3)
 	public SecurityFilterChain rsSecurityFilterChain(HttpSecurity http) throws Exception {
 
