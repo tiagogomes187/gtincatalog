@@ -1,4 +1,4 @@
-export const BASE_URL = "http://gtincatalog.up.railway.app";
+export const BASE_URL = "http://localhost:8080";
 
 export const CART_KEY = "br.dev.tiagogomes.dscommerce/Cart";
 
