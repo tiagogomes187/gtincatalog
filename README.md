@@ -2,17 +2,19 @@
 <h1 align="center">
 Catálogo de Produtos | Miss-Miss Calçados
 </h1>
-   <h2>Apresento a melhor vitrine digital que você já viu.</h2>
+   <h3>Apresento a melhor vitrine digital que você já viu.</h3>
 </div>
 
 ### <a href="https://gtincatalog.netlify.app/" target="_blank" rel="noreferrer">Clique aqui e acesse o catálogo em produção</a>
 
 <br>
+
+<p><img src="https://ik.imagekit.io/dpiu5qcwt/Icons/icons8-aten%C3%A7%C3%A3o.gif?updatedAt=1701529438252"><strong><em>OBS. Frontend ainda em desenvolvimento</em></strong></p>
 <h1>
 <p>Frontend</p>
-</h1>
-<img src="https://ik.imagekit.io/dpiu5qcwt/Icons/icons8-aten%C3%A7%C3%A3o.gif?updatedAt=1701529438252"><strong><em>OBS. Frontend ainda em desenvolvimento</em></strong><br><br>
 <img src="https://ik.imagekit.io/dpiu5qcwt/desktop/oficial.png?updatedAt=1701486487550">
+</h1>
+
 
 <h1>
 <p>Backend</p>
