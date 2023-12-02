@@ -5,14 +5,14 @@ Catálogo de Produtos | Miss-Miss Calçados
    <h2>Apresento a melhor vitrine digital que você já viu.</h2>
 </div>
 
-### [Clique aqui e acesse o catálogo](https://gtincatalog.netlify.app/)
+### <a href="https://gtincatalog.netlify.app/" target="_blank" rel="noreferrer">Clique aqui e acesse o catálogo em produção</a>
+
 <br>
 <h1>
 <p>Frontend</p>
 </h1>
 <img src="https://ik.imagekit.io/dpiu5qcwt/Icons/icons8-aten%C3%A7%C3%A3o.gif?updatedAt=1701529438252"><strong><em>OBS. Frontend ainda em desenvolvimento</em></strong><br><br>
 <img src="https://ik.imagekit.io/dpiu5qcwt/desktop/oficial.png?updatedAt=1701486487550">
-</h1>
 
 <h1>
 <p>Backend</p>
@@ -60,7 +60,7 @@ Além disso, usuários com privilégios administrativos terão acesso a uma áre
  ```
 ### Collection do **Postman**
  - <a href="https://github.com/tiagogomes187/gtincatalog/blob/f0e1b8dbfcf391581692030b8355b4964fa4551a/collection-postman/GtinCatalog%20Railway.postman_collection.json" target="_blank" rel="noreferrer">Collection - clique para baixar, depois importe no Postman</a>
-- <a href="https://github.com/tiagogomes187/gtincatalog/blob/f0e1b8dbfcf391581692030b8355b4964fa4551a/collection-postman/gtincatalog-RAILWAY.postman_environment.json" target="_blank" rel="noreferrer">Environment - clique para baixar, depois importe no Postman</a>
+ - <a href="https://github.com/tiagogomes187/gtincatalog/blob/f0e1b8dbfcf391581692030b8355b4964fa4551a/collection-postman/gtincatalog-RAILWAY.postman_environment.json" target="_blank" rel="noreferrer">Environment - clique para baixar, depois importe no Postman</a>
 
 ### Diretório estruturado em **Monorepo**
  gtincatalog
