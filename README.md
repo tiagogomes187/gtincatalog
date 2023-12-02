@@ -51,7 +51,7 @@ Além disso, usuários com privilégios administrativos terão acesso a uma áre
 - /frontend
 
 ## Licença
-Este projeto está sob licença do MIT. Veja o arquivo [LICENSE](#) para mais detalhes.
+Este projeto está sob licença do MIT. Veja o arquivo [LICENSE](https://github.com/tiagogomes187/gtincatalog/blob/b92e7482747734708d4795f81f18e410734fa97b/LICENSE) para mais detalhes.
 
 # Desenvolvedor
 
