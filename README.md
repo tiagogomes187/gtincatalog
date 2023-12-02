@@ -59,8 +59,8 @@ Além disso, usuários com privilégios administrativos terão acesso a uma áre
 
  ```
 ### Collection do **Postman**
- - [Collection - clique para baixar, depois importe no Postman]() 
- - [Environment - clique para baixar, depois importe no Postman]() 
+ - [Collection - clique para baixar, depois importe no Postman](https://github.com/tiagogomes187/gtincatalog/blob/f0e1b8dbfcf391581692030b8355b4964fa4551a/collection-postman/GtinCatalog%20Railway.postman_collection.json) 
+ - [Environment - clique para baixar, depois importe no Postman](https://github.com/tiagogomes187/gtincatalog/blob/f0e1b8dbfcf391581692030b8355b4964fa4551a/collection-postman/gtincatalog-RAILWAY.postman_environment.json) 
 
 ### Diretório estruturado em **Monorepo**
  gtincatalog
