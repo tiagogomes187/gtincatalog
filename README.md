@@ -9,6 +9,8 @@ Catálogo de Produtos | Miss-Miss Calçados
 <br>
 <h1>
 <p>Frontend</p>
+</h1>
+<img src="https://ik.imagekit.io/dpiu5qcwt/Icons/icons8-aten%C3%A7%C3%A3o.gif?updatedAt=1701529438252"><strong><em>OBS. Frontend ainda em desenvolvimento</em></strong><br><br>
 <img src="https://ik.imagekit.io/dpiu5qcwt/desktop/oficial.png?updatedAt=1701486487550">
 </h1>
 
@@ -48,7 +50,18 @@ Além disso, usuários com privilégios administrativos terão acesso a uma áre
  ```bash
     # Clone o projeto
     $ git clone https://github.com/tiagogomes187/gtincatalog.git
+
+    # Rode o backend com o seguinte comando, dentro do diretório 'gtincatalog' digite:
+    $ cd backend && ./mvnw spring-boot:run
+
+   # Rode o Frontend com o seguinte comando, dentro do diretório 'gtincatalog' digite:
+    $ cd frontend && yarn && yarn dev
+
  ```
+### Collection do **Postman**
+ - [Collection - clique para baixar, depois importe no Postman]() 
+ - [Environment - clique para baixar, depois importe no Postman]() 
+
 ### Diretório estruturado em **Monorepo**
  gtincatalog
 - /backend
@@ -57,9 +70,12 @@ Além disso, usuários com privilégios administrativos terão acesso a uma áre
 ## Licença
 Este projeto está sob licença do MIT. Veja o arquivo [LICENSE](https://github.com/tiagogomes187/gtincatalog/blob/b92e7482747734708d4795f81f18e410734fa97b/LICENSE) para mais detalhes.
 
-# Desenvolvedor
+## Desenvolvedor
 
-Tiago Gomes de Lima<br>
+<p align="left"><a href="https://www.tiagogomes.dev.br" target="_blank" rel="noreferrer"><img src="https://ik.imagekit.io/dpiu5qcwt/Icons/PerfilGitHub.png?updatedAt=1701533807360" width="120" height="120" alt="Tiago Gomes" /></a>
+<br><strong>Tiago Gomes de Lima</strong>
+</p>
+
 [![Linkedin Badge](https://img.shields.io/badge/Tiago_Gomes-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tiago-gomes187/)](https://www.linkedin.com/in/tiago-gomes187/) 
 
 

@@ -11,7 +11,7 @@ alter table if exists tb_user_role add constraint FKea2ootw6b6bb0xt3ptl28bymv fo
 alter table if exists tb_user_role add constraint FK7vn3h53d0tqdimm8cp45gc0kl foreign key (user_id) references tb_user;
 INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Alex', 'Brown', 'alex@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
 INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Maria', 'Green', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
-INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Tiago', 'Gomes', 'tiagogomes187@gmail.com', '$2a$10$ttdgHhnplySbpfkIBW8xqetcqSp9u3tgLBNTD9fn1eYpH3ppsjNK.');
+INSERT INTO tb_user (first_name, last_name, email, password) VALUES ('Tiago', 'Gomes', 'me@gmail.com', '$2a$10$u3kEXJ9L6jxE1oI49buuOenKx/OhsmLAEuWSXK3f3aNCEORobV4eW');
 INSERT INTO tb_role (authority) VALUES ('ROLE_OPERATOR');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
 INSERT INTO tb_role (authority) VALUES ('ROLE_CLIENT');
