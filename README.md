@@ -1,8 +1,12 @@
+<div>
 <h1 align="center">
 Catálogo de Produtos | Miss-Miss Calçados
-<p>A melhor vitrine digital que você já viu.</p>
 </h1>
+   <h2>Apresento a melhor vitrine digital que você já viu.</h2>
+</div>
 
+### [Clique aqui e acesse o catálogo](https://gtincatalog.netlify.app/)
+<br>
 <h1>
 <p>Frontend</p>
 <img src="https://ik.imagekit.io/dpiu5qcwt/desktop/oficial.png?updatedAt=1701486487550">
