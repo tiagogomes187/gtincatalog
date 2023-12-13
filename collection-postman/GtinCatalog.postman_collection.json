@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "c73e6527-c7cf-4fbe-9c8c-99af64772847",
-		"name": "GtinCatalog Railway",
+		"_postman_id": "d0c95ffe-22d7-4b85-a67f-0c19cfbe342c",
+		"name": "GtinCatalog",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "5761108"
 	},
@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"tiagogomes187@gmail.com\"\n}",
+							"raw": "{\n    \"email\" : \"me@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,7 +121,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"token\" : \"1c1d9b52-3282-4bc3-be0a-a2a000306d4e\",\n    \"password\" : \"4587789T\"\n}",
+							"raw": "{\n    \"token\" : \"1c1d9b52-3g82-4bc3-be0a-a2agh0306d4e\",\n    \"password\" : \"12345687\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -175,13 +175,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/categories/2",
+							"raw": "{{host}}/categories/9",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"categories",
-								"2"
+								"9"
 							]
 						}
 					},
@@ -204,7 +204,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Sandálias\"\r\n}",
+							"raw": "{\r\n    \"name\" : \"Botas\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -572,7 +572,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Tiago\",\r\n    \"lastName\": \"Lima\",\r\n    \"email\": \"me@gmail.com\",\r\n    \"password\" : \"tiago1234\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 2\r\n        }\r\n\r\n    ]\r\n}",
+							"raw": "{\r\n    \"firstName\": \"Fernanda\",\r\n    \"lastName\": \"Representante\",\r\n    \"email\": \"fernana@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 2\r\n        }\r\n\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -608,7 +608,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Tiago\",\r\n    \"lastName\": \"Lima\",\r\n    \"email\": \"tiago25@gmail.com\",\r\n    \"password\" : \"73498512Tl\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"Tiago\",\r\n    \"lastName\": \"Lima\",\r\n    \"email\": \"tiago25@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -652,13 +652,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/users/3",
+							"raw": "{{host}}/users/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"users",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -704,7 +704,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"to\": \"me@tiagogomes.dev.br\",\n\"subject\": \"Aviso aos clientes\",\n\"body\": \"Prezado cliente,\\n\\nAcesse agora:\\n\\nhttps://devsuperior.com.br\\n\\nAbraços!\"\n}",
+							"raw": "{\n\"to\": \"me@gmail.com\",\n\"subject\": \"Aviso aos clientes\",\n\"body\": \"Prezado cliente,\\n\\nAcesse agora:\\n\\nhttps://devsuperior.com.br\\n\\nAbraços!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
