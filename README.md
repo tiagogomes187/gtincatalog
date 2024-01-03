@@ -12,7 +12,7 @@ Catálogo de Produtos | Miss-Miss Calçados
 <p><img src="https://ik.imagekit.io/dpiu5qcwt/Icons/icons8-aten%C3%A7%C3%A3o.gif?updatedAt=1701529438252"><strong><em>OBS. Frontend ainda em desenvolvimento</em></strong></p>
 <h1>
 <p>Frontend</p>
-<img src="https://ik.imagekit.io/dpiu5qcwt/desktop/oficial.png?updatedAt=1701486487550">
+<img src="https://ik.imagekit.io/dpiu5qcwt/desktop/frontend-gtincatalog.png?updatedAt=1703201351028">
 </h1>
 
 
